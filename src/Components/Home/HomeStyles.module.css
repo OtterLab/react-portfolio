@@ -1,0 +1,24 @@
+.heroImage {
+    background-image: url('../../assets/hero_image_cover.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+
+.container {
+    height: 90vh;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 90vh;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.content {
+    height: 90vh;
+    z-index: 100;
+    position: relative;
+}
