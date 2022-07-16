@@ -24,7 +24,7 @@ function Navbar() {
     const [openMenu, setOpenMenu] = useState(false);
 
     return (  
-        <AppBar position="fixed" elevation={0} sx={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
+        <AppBar position="sticky" elevation={0} sx={{backgroundColor: 'white'}}>
             <Container maxWidth="lg">
                 <Toolbar disableGutters>
                     <div style={{flexGrow: 1}}>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import NavigationBar from './Components/NavigationBar/Navbar';
-import HomePage from './Components/Home/Home';
-import AboutPage from './Components/About/About';
-import SkillsPage from './Components/MySkills/Skills';
-import ProjectsPage from './Components/Projects/Projects';
-import ContactPage from './Components/Contact/Contact';
+import NavigationBar from './components/NavigationBar/Navbar';
+import HomePage from './components/Home/Home';
+import AboutPage from './components/About/About';
+import SkillsPage from './components/MySkills/Skills';
+import ProjectsPage from './components/Projects/Projects';
+import ContactPage from './components/Contact/Contact';
 
 function App() {
   return (
@@ -21,11 +21,6 @@ function App() {
         <Route path="/projects" element={<ProjectsPage/>} />
         <Route path="/contact" element={<ContactPage/>} />
       </Routes>
- 
-      {/* This is About page */}
-      {/* This is Skills page */}
-      {/* This is Projects page */}
-      {/* This is Contact page */}
     </div>
   );
 }

@@ -1,0 +1,34 @@
+.aboutContainer {
+    padding-top: 5em;
+    height: 80vh;
+    position: relative;
+    left: 4em;
+}
+
+.downloadBtn {
+    margin-top: 2em;
+    margin-left: 1.9em;
+}
+
+.overlayAboutHeading {
+    position: relative;
+    left: .3em;
+    text-transform: uppercase;
+    font-size: 7rem;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.aboutHeadingContent {
+    position: relative;
+    right: .5em;
+    bottom: 1.3em;
+}
+
+.aboutUnderline span {
+    padding: 0 28px;
+    position: relative;
+    bottom: .7em;
+    margin-right: .2em;
+    border-bottom: 4px solid #242A35;
+}
