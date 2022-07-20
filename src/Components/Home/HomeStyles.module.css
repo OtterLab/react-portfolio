@@ -3,30 +3,33 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 90vh;
 }
 
 .content {
-    height: 100vh;
+    height: 90%;
 }
 
 .container {
-    height: 100vh;
+    height: 90%;
 }
 
 .avatar {
     height: 350px;
     width: 350px;
-    position: relative;
-    right: 3em;
-    top: 1.2em;
 }
 
 .textLine span { 
     padding: 0 18px;
     position: relative;
     left: 3px;
-    bottom: 11px;
-    border-bottom: 3px solid #000;
-    margin-right: .8em;
+    bottom: 16px;
+    border-bottom: 3px solid #242A35;
+    margin-right: .6em;
+}
+
+.socialHero {
+    display: flex;
+    position: relative;
+    top: 10em;
 }

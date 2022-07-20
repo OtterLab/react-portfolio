@@ -1,8 +1,8 @@
 .aboutContainer {
-    padding-top: 5em;
-    height: 80vh;
+    height: 90vh;
     position: relative;
     left: 4em;
+    top: 7em;
 }
 
 .downloadBtn {

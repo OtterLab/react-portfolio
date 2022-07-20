@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import classes from './NavbarStyles.module.css';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Container from '@mui/material/Container';
 import Logo from '../../assets/ltcreative_logo_design.svg';
 import Hidden from '@mui/material/Hidden';
@@ -23,16 +24,24 @@ const navMenuItems = [
 function Navbar() {
     const [openMenu, setOpenMenu] = useState(false);
 
+    const trigger = useScrollTrigger();
+
     return (  
-        <AppBar position="sticky" elevation={0} sx={{backgroundColor: 'white'}}>
+        <AppBar position="sticky" elevation={trigger ? 5 : 0}
+                        style={{
+                            backgroundColor: trigger ? '#242A35' : 'white',
+                        }}>
             <Container maxWidth="lg">
-                <Toolbar disableGutters>
+                <Toolbar disableGutters style={{height: '60px'}}>
                     <div style={{flexGrow: 1}}>
-                        <img src={Logo} alt="ltcreative logo design" className={classes.logoImage} />
+                        <NavLink to="/">
+                            <img src={Logo} alt="ltcreative logo design" className={classes.logoImage} />
+                        </NavLink>
                     </div>
                     <Hidden smDown>
                         {navMenuItems.map((item) => (
-                            <NavLink key={item.title} to={item.url} className={classes.navLinkItems}>
+                            <NavLink key={item.title} to={item.url} className={classes.navLinkItems}
+                                style={{color: trigger ? 'white' : '#242A35'}}>
                                 {item.title}
                             </NavLink>
                         ))}

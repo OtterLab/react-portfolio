@@ -18,41 +18,43 @@ import IconButton from '@mui/material/IconButton';
 import LinkMui from '@mui/material/Link';
 import AboutSection from '../About/About';
 import SkillSection from '../MySkills/Skills';
+import ProjectsSection from '../Projects/Projects';
+import Typewriter from 'typewriter-effect';
+import FloatingCubesBG from '../FloatingCubes/FloatingCubes';
 
 const socialMenuItems = [
-    { icon: FacebookIcon, href: '', name: 'facebook' },
+    { icon: FacebookIcon, href: 'https://www.facebook.com/LeYing86', name: 'facebook' },
     { icon: InstagramIcon, href: '', name: 'instagram' },
-    { icon: LinkedInIcon, href: '', name: 'linkedin' },
-    { icon: GitHubIcon, href: '', name: 'github' }
+    { icon: LinkedInIcon, href: 'www.linkedin.com/in/ltruong29', name: 'linkedin' },
+    { icon: GitHubIcon, href: 'https://github.com/OtterLab', name: 'github' }
 ];
 
 const heroTheme = createTheme ({
     typography: {
         h2: {
             fontWeight: '500',
-            color: '#242A35'
+            color: '#242A35',
+            paddingTop: '8px'
         },
-        subtitle1: {
+        h5: {
             color: '#242A35',
             fontWeight: '500',
             letterSpacing: '4px',
             textTransform: 'uppercase'
         },
-        h6: {
-            lineHeight: '2px',
-            color: '#242A35',
-            fontWeight: '300',
+        subtitle1: {
+            position: 'relative',
+            top: '6px',
+            marginRight: '5px'
         },
         button: {
             '&.MuiButton-contained': {
                 backgroundColor: '#242A35',
-                width: '130px',
-                padding: '8px',
                 '&:hover': {
                     backgroundColor: '#FFCB06'
                 }
             }
-        },
+        }
     }
 });
 
@@ -60,40 +62,48 @@ function Home() {
     return (  
         <ThemeProvider theme={heroTheme}>
             <Paper className={classes.section} square elevation={0}>
+                <FloatingCubesBG/>
                 <Container className={classes.container} maxWidth="lg">
                     <Grid className={classes.content} container justifyContent="space-between" alignItems="center">
-                        <Grid item sm={7} sx={{position: 'relative', left: '2.5em'}}>
-                            <Typography variant="subtitle1" className={classes.textLine}><span></span>Hello,</Typography>
-                            <Box sx={{paddingTop: '1.7em'}}>
+                        <Grid item sm={7} sx={{position: 'relative', left: '2.5em', top: '1.5em'}}>
+                            <Typography variant="h5" className={classes.textLine}><span></span>Hello,</Typography>
+                            <Typography variant="h2">
+                                <Typewriter
+                                options={{
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 50,
+                                    strings: [
+                                        "I'm Leanne",
+                                        "Graphic Designer",
+                                        "Frontend Developer"
+                                    ]
+                                }}
+                                />
+                            </Typography>
+                            <Box sx={{paddingTop: '1em'}}>
                                 <Link to="/about" style={{textDecoration: 'none'}}>
-                                    <Button variant="contained" endIcon={<ArrowCircleRightOutlinedIcon/>}>About me</Button>
+                                    <Button variant="contained" endIcon={<ArrowCircleRightOutlinedIcon style={{fontSize: '30', marginLeft: '4px'}}/>}>About me</Button>
                                 </Link>
                             </Box>
+                            <div className={classes.socialHero}>
+                                <Typography variant="subtitle1">Connect me:</Typography>
+                                { /* social menu */}
+                                {socialMenuItems.map((item) => (
+                                    <LinkMui href={item.href} key={item.name}>
+                                        <IconButton sx={{color: '#242A35'}}>
+                                            <item.icon style={{fontSize: '25', color: '#242A35'}}/>
+                                        </IconButton>
+                                    </LinkMui>
+                                ))}
+                            </div>
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item sm={4} sx={{position: 'relative', top: '2.5em', right: '13px'}}>
                             <div>
-                                <img src={ProfileAvatar} alt="profile avatar" className={classes.avatar}/>
+                                <img src={ProfileAvatar} alt="profile avatar" className={classes.avatar} />
                             </div>
                         </Grid>
                     </Grid>
-
-                    { /* social menu */}
-                    {socialMenuItems.map((item) => (
-                        <LinkMui href={item.href} key={item.name}>
-                            <IconButton
-                            sx={{
-                                color: '#242A35', 
-                                padding: '.4em', 
-                                marginTop: '.3em', 
-                                position: 'relative', 
-                                right: '11px',
-                                left: '1.2em',
-                                bottom: '3em'
-                            }}>
-                                <item.icon style={{fontSize: '25'}}/>
-                            </IconButton>
-                        </LinkMui>
-                    ))}
                 </Container>
             </Paper>
 
@@ -102,6 +112,10 @@ function Home() {
 
             {/* This is skill page */}
             <SkillSection/>
+
+            {/* This is projects page */}
+            <ProjectsSection/>
+            
         </ThemeProvider>
     );
 }

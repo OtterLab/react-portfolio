@@ -1,0 +1,32 @@
+.projectsContainer {
+    height: 90vh;
+    position: relative;
+    top: 4em;
+}
+.projectHeadingContainer {
+    text-align: center;
+}
+
+.projectHeadingText {
+    position: relative;
+    bottom: 3.5em;
+    right: 1.8em;
+    text-align: center;
+}
+
+.overlayProjectHeading {
+    text-transform: uppercase;
+    font-size: 7rem;
+    font-weight: 600;
+    color: whitesmoke;
+    position: relative;
+    top: .3em;
+}
+
+.projectUnderline span {
+    padding: 0 28px;
+    position: relative;
+    bottom: .6em;
+    margin-right: .2em;
+    border-bottom: 4px solid #242A35;
+}

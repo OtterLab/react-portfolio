@@ -1,14 +1,14 @@
 .logoImage {
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
     padding-top: 5px;
 }
 
 .navLinkItems {
     text-decoration: none;
-    color: #242A35;
+    color: white;
     margin-right: 10px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 5px;
@@ -35,6 +35,7 @@
     color: #242A35;
 }
 
+/* Navbar mobile */
 .closeIconBtn {
     text-align: right;
     position: relative;
