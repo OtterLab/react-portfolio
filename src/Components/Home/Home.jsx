@@ -19,6 +19,7 @@ import LinkMui from '@mui/material/Link';
 import AboutSection from '../About/About';
 import SkillSection from '../MySkills/Skills';
 import ProjectsSection from '../Projects/Projects';
+import ContactSection from '../Contact/Contact';
 import Typewriter from 'typewriter-effect';
 import FloatingCubesBG from '../FloatingCubes/FloatingCubes';
 
@@ -60,8 +61,9 @@ const heroTheme = createTheme ({
 
 function Home() {
     return (  
-        <ThemeProvider theme={heroTheme}>
+        <div>
             <Paper className={classes.section} square elevation={0}>
+                <ThemeProvider theme={heroTheme}>
                 <FloatingCubesBG/>
                 <Container className={classes.container} maxWidth="lg">
                     <Grid className={classes.content} container justifyContent="space-between" alignItems="center">
@@ -105,6 +107,7 @@ function Home() {
                         </Grid>
                     </Grid>
                 </Container>
+                </ThemeProvider>
             </Paper>
 
             {/* This is about page */}
@@ -115,8 +118,10 @@ function Home() {
 
             {/* This is projects page */}
             <ProjectsSection/>
-            
-        </ThemeProvider>
+
+            {/* This is contact page */}
+            <ContactSection/>
+        </div>
     );
 }
 

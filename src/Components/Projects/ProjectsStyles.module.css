@@ -1,8 +1,12 @@
-.projectsContainer {
-    height: 90vh;
-    position: relative;
-    top: 4em;
+.projectsSection {
+    background-color: #282F3B;
 }
+
+.projectsContainer {
+    position: relative;
+    top: 1em;
+}
+
 .projectHeadingContainer {
     text-align: center;
 }
@@ -18,7 +22,8 @@
     text-transform: uppercase;
     font-size: 7rem;
     font-weight: 600;
-    color: whitesmoke;
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0.3;
     position: relative;
     top: .3em;
 }
@@ -28,5 +33,23 @@
     position: relative;
     bottom: .6em;
     margin-right: .2em;
-    border-bottom: 4px solid #242A35;
+    border-bottom: 4px solid white;
+}
+
+/* Project card */
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    top: 1em;
+}
+
+.card {
+    width: 300px;
+    height: 260px;
+    margin: 11px;
+    background-color: #222732;
+    padding: 1.5em;
+    border-radius: 10px;
 }

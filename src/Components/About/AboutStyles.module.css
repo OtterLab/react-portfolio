@@ -1,5 +1,9 @@
-.aboutContainer {
+.aboutSection {
+    background-color: #282F3B;
     height: 90vh;
+}
+
+.aboutContainer {
     position: relative;
     left: 4em;
     top: 7em;
@@ -16,7 +20,8 @@
     text-transform: uppercase;
     font-size: 7rem;
     font-weight: 600;
-    color: whitesmoke;
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0.3;
 }
 
 .aboutHeadingContent {
@@ -30,5 +35,5 @@
     position: relative;
     bottom: .7em;
     margin-right: .2em;
-    border-bottom: 4px solid #242A35;
+    border-bottom: 4px solid white;
 }

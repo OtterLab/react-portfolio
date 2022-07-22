@@ -14,13 +14,13 @@ const aboutTheme = createTheme ({
             bottom: '1.9em',
             marginLeft: '1.7em',
             textTransform: 'uppercase',
-            color: '#242A35',
+            color: 'white',
             fontWeight: '500',
             letterSpacing: '3px'
         },
         body1: {
             textAlign: 'left',
-            color: '#242A35',
+            color: 'white',
             fontWeight: '300',
             position: 'relative',
             width: '60%',
@@ -39,7 +39,7 @@ const aboutTheme = createTheme ({
 
 function About() {
     return (  
-        <div>
+        <div className={classes.aboutSection}>
             <ThemeProvider theme={aboutTheme}>
                 <Container maxWidth="lg" className={classes.aboutContainer}>
                     <div className={classes.overlayAboutHeading}>About Me</div>
