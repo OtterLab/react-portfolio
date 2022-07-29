@@ -1,8 +1,9 @@
-.projectsSection {
+.projectSection {
     background-color: #282F3B;
+    padding-bottom: 8em;
 }
 
-.projectsContainer {
+.projectContainer {
     position: relative;
     top: 1em;
 }
@@ -42,14 +43,98 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    top: 1em;
+    top: 2em;
+    width: 80%;
+    left: 11%;
+}
+
+.projectImg {
+    width: 300px;
+    height: 220px;
+    border-radius: 10px;
+    transform: translateZ(40px);
 }
 
 .card {
     width: 300px;
-    height: 260px;
-    margin: 11px;
-    background-color: #222732;
-    padding: 1.5em;
-    border-radius: 10px;
+    height: 250px;
+    margin-right: 1.2em;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.cardBody {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, -40px) rotateY(180deg);
+    width: 275px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 5px solid #FCB51D;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.cardBody .bg {
+    position: absolute;
+    background-color: white;
+    border-radius: 100px;
+    width: 0%;
+    transition: .5s;
+}
+
+.cardBody .bg:nth-child(1) {
+    height: 60%;
+    transform-origin: left;
+    top: 0;
+    left: -30%;
+    transform: rotate(-10deg);
+}
+
+.cardBody .bg:nth-child(2) {
+    height: 50%;
+    transform-origin: right;
+    top: 5%;
+    right: -30%;
+    transform: rotate(-10deg);
+}
+
+.cardBody .bg:nth-child(3) {
+    height: 60%;
+    transform-origin: left;
+    top: 70%;
+    left: -30%;
+    transform: rotate(-10deg);
+}
+
+.card:hover .cardBody .bg {
+    width: 200%;
+    transition-delay: 1s;
+}
+
+.card:hover .cardBody .bg:nth-child(2) {
+    transition-delay: 1.5s;
+}
+
+.card:hover .cardBody .bg:nth-child(3) {
+    transition-delay: 2s;
+}
+
+.cardContent {
+    position: relative;
+    top: 28px;
+    opacity: 0;
+    transition: .5s;
+    padding: 20px;
+    text-align: center;
+}
+
+.card:hover .cardContent {
+    opacity: 1;
+    transition-delay: 2.5s;
 }

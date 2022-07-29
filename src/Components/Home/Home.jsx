@@ -22,6 +22,7 @@ import ProjectsSection from '../Projects/Projects';
 import ContactSection from '../Contact/Contact';
 import Typewriter from 'typewriter-effect';
 import FloatingCubesBG from '../FloatingCubes/FloatingCubes';
+import 'animate.css';
 
 const socialMenuItems = [
     { icon: FacebookIcon, href: 'https://www.facebook.com/LeYing86', name: 'facebook' },
@@ -35,7 +36,7 @@ const heroTheme = createTheme ({
         h2: {
             fontWeight: '500',
             color: '#242A35',
-            paddingTop: '8px'
+            paddingTop: '6px'
         },
         h5: {
             color: '#242A35',
@@ -48,11 +49,17 @@ const heroTheme = createTheme ({
             top: '6px',
             marginRight: '5px'
         },
-        button: {
-            '&.MuiButton-contained': {
-                backgroundColor: '#242A35',
-                '&:hover': {
-                    backgroundColor: '#FFCB06'
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#242A35',
+                    fontSize: '14px',
+                    '&:hover': {
+                        backgroundColor: '#FCB51D',
+                        color: '#242A35'
+                    }
                 }
             }
         }
@@ -67,7 +74,7 @@ function Home() {
                 <FloatingCubesBG/>
                 <Container className={classes.container} maxWidth="lg">
                     <Grid className={classes.content} container justifyContent="space-between" alignItems="center">
-                        <Grid item sm={7} sx={{position: 'relative', left: '2.5em', top: '1.5em'}}>
+                        <Grid item sm={7} sx={{position: 'relative', left: '2.5em', top: '2em'}} className="animate__animated animate__slideInUp">
                             <Typography variant="h5" className={classes.textLine}><span></span>Hello,</Typography>
                             <Typography variant="h2">
                                 <Typewriter
@@ -85,7 +92,7 @@ function Home() {
                             </Typography>
                             <Box sx={{paddingTop: '1em'}}>
                                 <Link to="/about" style={{textDecoration: 'none'}}>
-                                    <Button variant="contained" endIcon={<ArrowCircleRightOutlinedIcon style={{fontSize: '30', marginLeft: '4px'}}/>}>About me</Button>
+                                    <Button variant="contained" endIcon={<ArrowCircleRightOutlinedIcon style={{fontSize: '25', marginLeft: '4px'}}/>}>About me</Button>
                                 </Link>
                             </Box>
                             <div className={classes.socialHero}>
@@ -101,7 +108,7 @@ function Home() {
                             </div>
                         </Grid>
                         <Grid item sm={4} sx={{position: 'relative', top: '2.5em', right: '13px'}}>
-                            <div>
+                            <div className="animate__animated animate__slideInRight">
                                 <img src={ProfileAvatar} alt="profile avatar" className={classes.avatar} />
                             </div>
                         </Grid>

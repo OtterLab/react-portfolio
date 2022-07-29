@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import NavigationBar from './components/NavigationBar/Navbar';
+import Footer from './components/Footer/Footer';
 import HomePage from './components/Home/Home';
 import AboutPage from './components/About/About';
 import SkillsPage from './components/MySkills/Skills';
@@ -12,7 +13,7 @@ function App() {
     <div className="App">
       {/* Navigation Bar */}
       <NavigationBar/>
-
+      
       {/* Routes */}
       <Routes>
         <Route path="/" element={<HomePage/>} />
@@ -21,6 +22,9 @@ function App() {
         <Route path="/projects" element={<ProjectsPage/>} />
         <Route path="/contact" element={<ContactPage/>} />
       </Routes>
+
+      {/* Footer section */}
+      <Footer/>
     </div>
   );
 }
