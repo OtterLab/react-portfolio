@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import classes from './SkillsStyles.module.css';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -16,6 +16,7 @@ const skillTheme = createTheme ({
 });
 
 function Skills() {
+
     useEffect(() => {
         Aos.init({ duration: 1000 });
     });
@@ -23,7 +24,7 @@ function Skills() {
     return (  
         <div className={classes.skillsContainer}>
             <ThemeProvider theme={skillTheme}>
-                <div data-aos="fade-up">
+                <div data-aos="fade-left" data-aos-easing="ease-in-sine">
                     <div className={classes.skillHeadingContainer}>
                         <div className={classes.overlaySkillHeading}>Skills</div>
                         <div className={classes.skillHeadingText}>

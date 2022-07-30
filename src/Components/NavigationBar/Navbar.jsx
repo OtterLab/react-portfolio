@@ -34,8 +34,7 @@ function Navbar() {
                     </div>
                     <Hidden smDown>
                         {navMenuItems.map((item) => (
-                            <NavLink key={item.title} to={item.url} className={classes.navLinkItems}
-                                style={{color: 'white'}}>
+                            <NavLink key={item.title} to={item.url} className={classes.navLinkItems}>
                                 {item.title}
                             </NavLink>
                         ))}

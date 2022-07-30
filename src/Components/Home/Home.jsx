@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './HomeStyles.module.css';
 import Paper from '@mui/material/Paper';
+import 'animate.css';
 import Container from '@mui/material/Container';
 import ProfileAvatar from '../../assets/avatar_profile.svg';
 import Typography from '@mui/material/Typography';
@@ -22,7 +23,7 @@ import ProjectsSection from '../Projects/Projects';
 import ContactSection from '../Contact/Contact';
 import Typewriter from 'typewriter-effect';
 import FloatingCubesBG from '../FloatingCubes/FloatingCubes';
-import 'animate.css';
+import ScrollTopIndicator from '../ScrollToTop/ScrollTopIndicator';
 
 const socialMenuItems = [
     { icon: FacebookIcon, href: 'https://www.facebook.com/LeYing86', name: 'facebook' },
@@ -71,49 +72,49 @@ function Home() {
         <div>
             <Paper className={classes.section} square elevation={0}>
                 <ThemeProvider theme={heroTheme}>
-                <FloatingCubesBG/>
-                <Container className={classes.container} maxWidth="lg">
-                    <Grid className={classes.content} container justifyContent="space-between" alignItems="center">
-                        <Grid item sm={7} sx={{position: 'relative', left: '2.5em', top: '2em'}} className="animate__animated animate__slideInUp">
-                            <Typography variant="h5" className={classes.textLine}><span></span>Hello,</Typography>
-                            <Typography variant="h2">
-                                <Typewriter
-                                options={{
-                                    autoStart: true,
-                                    loop: true,
-                                    delay: 50,
-                                    strings: [
-                                        "I'm Leanne",
-                                        "Graphic Designer",
-                                        "Frontend Developer"
-                                    ]
-                                }}
-                                />
-                            </Typography>
-                            <Box sx={{paddingTop: '1em'}}>
-                                <Link to="/about" style={{textDecoration: 'none'}}>
-                                    <Button variant="contained" endIcon={<ArrowCircleRightOutlinedIcon style={{fontSize: '25', marginLeft: '4px'}}/>}>About me</Button>
-                                </Link>
-                            </Box>
-                            <div className={classes.socialHero}>
-                                <Typography variant="subtitle1">Connect me:</Typography>
-                                { /* social menu */}
-                                {socialMenuItems.map((item) => (
-                                    <LinkMui href={item.href} key={item.name}>
-                                        <IconButton sx={{color: '#242A35'}}>
-                                            <item.icon style={{fontSize: '25', color: '#242A35'}}/>
-                                        </IconButton>
-                                    </LinkMui>
-                                ))}
-                            </div>
-                        </Grid>
-                        <Grid item sm={4} sx={{position: 'relative', top: '2.5em', right: '13px'}}>
-                            <div className="animate__animated animate__slideInRight">
-                                <img src={ProfileAvatar} alt="profile avatar" className={classes.avatar} />
-                            </div>
-                        </Grid>
-                    </Grid>
-                </Container>
+                    <FloatingCubesBG/>
+                        <Container className={classes.container} maxWidth="lg">
+                            <Grid className={classes.content} container justifyContent="space-between" alignItems="center">
+                                <Grid item sm={7} sx={{position: 'relative', left: '2.5em', top: '2em'}} className="animate__animated animate__slideInUp">
+                                    <Typography variant="h5" className={classes.textLine}><span></span>Hello,</Typography>
+                                    <Typography variant="h2">
+                                        <Typewriter
+                                        options={{
+                                            autoStart: true,
+                                            loop: true,
+                                            delay: 50,
+                                            strings: [
+                                                "I'm Leanne",
+                                                "Graphic Designer",
+                                                "Frontend Developer"
+                                            ]
+                                        }}
+                                        />
+                                    </Typography>
+                                    <Box sx={{paddingTop: '1em'}}>
+                                        <Link to="/about" style={{textDecoration: 'none'}}>
+                                            <Button variant="contained" endIcon={<ArrowCircleRightOutlinedIcon style={{fontSize: '25', marginLeft: '4px'}}/>}>About me</Button>
+                                        </Link>
+                                    </Box>
+                                    <div className={classes.socialHero}>
+                                        <Typography variant="subtitle1">Connect me:</Typography>
+                                        { /* social menu */}
+                                        {socialMenuItems.map((item) => (
+                                            <LinkMui href={item.href} key={item.name}>
+                                                <IconButton sx={{color: '#242A35'}}>
+                                                    <item.icon style={{fontSize: '25', color: '#242A35'}}/>
+                                                </IconButton>
+                                            </LinkMui>
+                                        ))}
+                                    </div>
+                                </Grid>
+                                <Grid item sm={4} sx={{position: 'relative', top: '2.5em', right: '13px'}}>
+                                    <div className="animate__animated animate__slideInRight">
+                                        <img src={ProfileAvatar} alt="profile avatar" className={classes.avatar} />
+                                    </div>
+                                </Grid>
+                            </Grid>
+                        </Container>
                 </ThemeProvider>
             </Paper>
 
@@ -128,6 +129,9 @@ function Home() {
 
             {/* This is contact page */}
             <ContactSection/>
+
+            {/* Scroll to the top button */}
+            <ScrollTopIndicator showBelow={250} />
         </div>
     );
 }

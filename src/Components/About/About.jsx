@@ -49,6 +49,7 @@ const aboutTheme = createTheme ({
 });
 
 function About() {
+    
     useEffect(() => {
         Aos.init({ duration: 1000 });
     });
@@ -58,9 +59,11 @@ function About() {
             <ThemeProvider theme={aboutTheme}>
                 <Container maxWidth="lg" className={classes.aboutContainer}>
                     <div data-aos="fade-up">
-                        <div className={classes.overlayAboutHeading}>About Me</div>
-                        <div className={classes.aboutHeadingContent}>
-                            <Typography variant="h4" className={classes.aboutUnderline}><span></span>Know Me More</Typography>
+                        <div className={classes.aboutHeadingContainer}>
+                            <div className={classes.overlayAboutHeading}>About Me</div>
+                            <div className={classes.aboutHeadingContent}>
+                                <Typography variant="h4" className={classes.aboutUnderline}><span></span>Know Me More</Typography>
+                            </div>
                         </div>
                         <Typography variant="body1">
                             A graduate graphic designer and frontend developer with a particular interest in UX and UI

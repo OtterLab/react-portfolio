@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './ProjectsStyles.module.css';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import LaunchIcon from '@mui/icons-material/Launch';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 // Projects Item
 const projectMenuItems = [
@@ -91,39 +93,46 @@ const projectTheme = createTheme ({
 });
 
 function Projects() {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    });
+
     return (  
         <div className={classes.projectSection}>
-        <ThemeProvider theme={projectTheme}>
-        <div className={classes.projectContainer}>
-            <div className={classes.projectHeadingContainer}>
-                <div className={classes.overlayProjectHeading}>Projects</div>
-                <div className={classes.projectHeadingText}>
-                    <Typography variant="h4" className={classes.projectUnderline}><span></span>Recent Work</Typography>
-                </div>
-            </div>
-            <div className={classes.cardContainer}>
-                {projectMenuItems.map((item) => (
-                    <div className={classes.card} key={item.id}>
-                        <div className={classes.cardImage}>
-                            <img src={item.projectImage} alt="" className={classes.projectImg} />
-                        </div>
-                        <div className={classes.cardBody}>
-                            <span className={classes.bg}></span>
-                            <span className={classes.bg}></span>
-                            <span className={classes.bg}></span>
-                            <div className={classes.cardContent}>
-                                <Typography variant="subtitle1">{item.projectTitle}</Typography>
-                                <Typography variant="subtitle2">{item.category}</Typography>
-                                <Link sx={{textDecoration: 'none'}} href={item.url}>
-                                    <Button variant="contained" startIcon={<LaunchIcon/>}>View in Behance</Button>
-                                </Link>
+            <ThemeProvider theme={projectTheme}>
+                <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                    <div className={classes.projectContainer}>
+                        <div className={classes.projectHeadingContainer}>
+                            <div className={classes.overlayProjectHeading}>Projects</div>
+                            <div className={classes.projectHeadingText}>
+                                <Typography variant="h4" className={classes.projectUnderline}><span></span>Recent Work</Typography>
                             </div>
                         </div>
+                        <div className={classes.cardContainer}>
+                            {projectMenuItems.map((item) => (
+                                <div className={classes.card} key={item.id}>
+                                    <div className={classes.cardImage}>
+                                        <img src={item.projectImage} alt="" className={classes.projectImg} />
+                                    </div>
+                                    <div className={classes.cardBody}>
+                                        <span className={classes.bg}></span>
+                                        <span className={classes.bg}></span>
+                                        <span className={classes.bg}></span>
+                                        <div className={classes.cardContent}>
+                                            <Typography variant="subtitle1">{item.projectTitle}</Typography>
+                                            <Typography variant="subtitle2">{item.category}</Typography>
+                                            <Link sx={{textDecoration: 'none'}} href={item.url}>
+                                                <Button variant="contained" startIcon={<LaunchIcon/>}>View in Behance</Button>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                ))}
-            </div>
-        </div>
-        </ThemeProvider>
+                </div>
+            </ThemeProvider>
         </div>
     );
 }
