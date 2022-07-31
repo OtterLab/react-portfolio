@@ -84,7 +84,7 @@ function Contact() {
                                             <Typography variant="h5">Follow Me</Typography>
                                             {socialIconItems.map((item) => (
                                                 <IconButton key={item.name} size="small" sx={{border: '2px solid #FCB51D', marginRight: '13px', marginTop: '14px'}}>
-                                                    <item.icon style={{fontSize: '25', color: 'white', padding: '3px'}}/>
+                                                    <item.icon style={{fontSize: '25', color: 'white', padding: '5px'}}/>
                                                 </IconButton>
                                             ))}
                                         </div>

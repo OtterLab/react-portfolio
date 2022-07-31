@@ -15,7 +15,6 @@ const scrollToTopTheme = createTheme ({
                     bottom: '4vh',
                     "&:hover, &.Mui-focusVisible": {
                         transition: '0.3s',
-                        color: '#242A35',
                         backgroundColor: '#FCB51D'
                     },
                     
